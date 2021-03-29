@@ -1,5 +1,6 @@
 import Header from '../header/Header';
 import AddPlayer from '../addPlayer/'
+import PlayerList from '../playerList';
 
 
 
@@ -9,6 +10,7 @@ function App() {
     <div>
       <Header />
       <AddPlayer />
+      <PlayerList />
  
     </div>
   );
