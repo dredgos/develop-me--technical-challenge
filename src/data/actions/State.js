@@ -4,3 +4,10 @@ export const addPlayer = (data) => {
         data: data
     }
 }
+
+export const shufflePlayers = (data) => {
+    return {
+        type: "SHUFFLE",
+        data: data,
+    }
+}
