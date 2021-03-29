@@ -48,7 +48,6 @@ const createAllMatches = (state) => {
     }
 }
 
-// Populating all the matches
 
 const reducer = (state, action) => {
     switch(action.type) {
