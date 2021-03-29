@@ -1,5 +1,5 @@
 import Header from '../header/Header';
-import AddPlayer from '../addPlayer/AddPlayer'
+import AddPlayer from '../addPlayer/'
 
 
 
