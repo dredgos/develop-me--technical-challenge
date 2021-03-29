@@ -8,9 +8,11 @@ const newPlayer = (state, {data}) => {
 }
 
 
+
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADDPLAYER": return newPlayer(state, action)
+        case "GENERATEMATCHES": return shufflePlayers(state, action)
         default: return initial;
     }
 }
