@@ -16,17 +16,19 @@ const shuffle = (array) => {
     return array;
 }
 
-const shuffleArray =  (state) => {
-    return{
+const startTournament =  (state) => {
+    return {
         ...state,
-        players: shuffle(state.players)
+        players: shuffle(state.players),
+        tournamentStarted: true,
     }
 }
 
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADDPLAYER": return newPlayer(state, action);
-        case "SHUFFLE": return shuffleArray(state, action);
+        case "STARTTOURNAMENT": return startTournament(state, action);
+        case "RESET": return initial;
         default: return initial;
     }
 }

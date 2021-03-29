@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlayerList from './PlayerList'
-import { shufflePlayers } from '../../data/actions/State'
+import { prepareTournament } from '../../data/actions/State'
 
 
 const mapStateToProps = (state) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        shufflePlayerList: (data) => dispatch(shufflePlayers(data))
+        startTourney: (data) => dispatch(prepareTournament(data))
     }
 }
 

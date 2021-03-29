@@ -11,7 +11,7 @@ const AddPlayer = ({ addNewPlayer }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addNewPlayer(playerName);
+        addNewPlayer(playerName);        
     }
 
     return (
