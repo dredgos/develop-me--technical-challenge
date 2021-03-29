@@ -1,4 +1,5 @@
 const initial = {
+    tournamentStarted: false,
     players: [],
 }
 

@@ -1,4 +1,4 @@
-const PlayerList = ({ players, shufflePlayerList }) => {
+const PlayerList = ({ players, startTourney }) => {
     return (
         <section>
             <h3>Current Players</h3>
@@ -7,7 +7,7 @@ const PlayerList = ({ players, shufflePlayerList }) => {
                     <li key={index}>{player}</li>
                 ))}
             </ul>
-            <button onClick={shufflePlayerList}>Let the Games Begin!</button>
+            <button onClick={startTourney}>Let the Games Begin!</button>
         </section>
     );
 };

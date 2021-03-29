@@ -1,16 +1,18 @@
+import GameSetup from '../gameSetup/GameSetup';
 import Header from '../header/Header';
-import AddPlayer from '../addPlayer/'
-import PlayerList from '../playerList';
+import TournamentView from '../tournamentView/';
 
 
 
 
-function App() {
+
+function App({ tournamentStarted }) {
   return (
     <div>
       <Header />
-      <AddPlayer />
-      <PlayerList />
+      {!tournamentStarted ? <GameSetup /> : <TournamentView />}
+      
+
  
     </div>
   );

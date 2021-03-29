@@ -5,9 +5,15 @@ export const addPlayer = (data) => {
     }
 }
 
-export const shufflePlayers = (data) => {
+export const prepareTournament = (data) => {
     return {
-        type: "SHUFFLE",
+        type: "STARTTOURNAMENT",
         data: data,
+    }
+}
+
+export const reset = () => {
+    return {
+        type: "RESET"
     }
 }
