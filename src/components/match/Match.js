@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+
 const Match = ({ player1, player2, sendWinner }) => {
 
    const [winner, setWinner] = useState("")

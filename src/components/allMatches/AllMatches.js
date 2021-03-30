@@ -1,7 +1,6 @@
-import { useState } from "react";
 import Match from "../match/";
 
-const AllMatches = ({ matches }) => {
+const AllMatches = ({ matches, newRound }) => {
 
     
     return (
@@ -11,7 +10,7 @@ const AllMatches = ({ matches }) => {
                     <>
                         <h2>Table {match.matchID + 1}</h2>
                         <Match 
-                            key={match.matchID} 
+                            key={`${match.player1}V${match.player2}`} 
                             matchID={match.matchID} 
                             player1={match.player1} 
                             player2={match.player2}
@@ -19,7 +18,7 @@ const AllMatches = ({ matches }) => {
                     </>
                 ))}
             </div>
-            <button>New Round</button>
+            <button onClick={newRound}>New Round</button>
         </>
     );
 };

@@ -25,3 +25,8 @@ export const addWinner = (winner) => {
     }
 }
 
+export const createNewRound = () => {
+    return {
+        type: "NEWROUND",
+    }
+}
