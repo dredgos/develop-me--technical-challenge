@@ -18,3 +18,10 @@ export const reset = () => {
     }
 }
 
+export const addWinner = (winner) => {
+    return {
+        type: "ADDWINNER",
+        winner: winner,
+    }
+}
+

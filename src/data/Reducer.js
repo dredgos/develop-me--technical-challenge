@@ -36,9 +36,10 @@ const createAllMatches = (state) => {
     
     for (let i = 1; i <= totalmatches; i += 1) {
         generatedMatches.push ({
-            matchID: i,
+            matchID: i - 1,
             player1: state.players[allocated],
-            player2: state.players[allocated + 1], 
+            player2: state.players[allocated + 1],
+            winner: "", 
         })
         allocated += 2;
     }
@@ -51,10 +52,22 @@ const createAllMatches = (state) => {
 }
 
 
+
+const gameWinner = (state, action) => {
+
+    return {
+        ...state,
+        winners: [...state.winners, action.winner]
+    }
+
+}
+
+
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADDPLAYER": return newPlayer(state, action);
         case "STARTTOURNAMENT": return createAllMatches(startTournament(state, action));
+        case "ADDWINNER": return gameWinner(state, action);
         case "RESET": return initial;
         default: return initial;
     }
