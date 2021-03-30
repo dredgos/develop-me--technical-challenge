@@ -1,3 +1,4 @@
+
 import initial from './Initial';
 
 const newPlayer = (state, {data}) => {
@@ -51,8 +52,7 @@ const createAllMatches = (state) => {
     }
 }
 
-
-
+// Adding game winners to the array
 const gameWinner = (state, action) => {
 
     return {
@@ -62,12 +62,22 @@ const gameWinner = (state, action) => {
 
 }
 
+const makeNewRound = (state) => {
+    return {
+        ...state,
+        players: state.winners,
+        winners: [],
+    }
+}
+
+
 
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADDPLAYER": return newPlayer(state, action);
         case "STARTTOURNAMENT": return createAllMatches(startTournament(state, action));
         case "ADDWINNER": return gameWinner(state, action);
+        case "NEWROUND": return createAllMatches(makeNewRound(state, action))
         case "RESET": return initial;
         default: return initial;
     }
