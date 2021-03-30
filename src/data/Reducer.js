@@ -30,6 +30,7 @@ const startTournament = (state) => {
 
 const createAllMatches = (state) => {
     let generatedMatches = [];
+    let totalRounds = Math.log2(state.players.length);
     let totalmatches = state.players.length / 2;
     let allocated = 0;
     
@@ -39,12 +40,13 @@ const createAllMatches = (state) => {
             player1: state.players[allocated],
             player2: state.players[allocated + 1], 
         })
-        allocated = allocated += 2;
+        allocated += 2;
     }
     
     return {
         ...state,
-        matches: generatedMatches
+        matches: generatedMatches,
+        totalRounds: totalRounds,
     }
 }
 
