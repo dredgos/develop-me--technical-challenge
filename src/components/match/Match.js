@@ -3,12 +3,24 @@ import { useState } from 'react'
 
 const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion }) => {
 
-   const [winner, setWinner] = useState("")
-   const [confirmed, setConfirmed] = useState(false)
+   const [winner, setWinner] = useState("");
+   const [confirmed, setConfirmed] = useState(false);
+   const [p1, setP1] = useState(false);
+   const [p2, setP2] = useState(false);
 
-    const handleClick1 = () => setWinner(player1)
-    const handleClick2 = () => setWinner(player2)
-    const handleConfirm = (value) => {
+    const handleClick1 = () => {
+        setWinner(player1);
+        setP1(true);
+        setP2(false);
+    }
+
+    const handleClick2 = () => {
+        setWinner(player2);
+        setP1(false);
+        setP2(true);
+    }
+
+    const handleConfirm = () => {
         setConfirmed(true)
         sendWinner(winner)
     }
@@ -16,14 +28,22 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion }) =>
         setNewChampion(winner)
     }
 
-    return (        
 
+    let buttonStyle = {
+        background: "green",
+    }
+
+    return (
         <div>
-            <button value={player1} onClick={handleClick1}>{player1}</button>
-            <button value={player2} onClick={handleClick2}>{player2}</button>
+            {!confirmed ? 
+            <>
+                <button style={p1 ? buttonStyle : null} value={player1} onClick={handleClick1}>{player1}</button>
+                <button style={p2 ? buttonStyle : null} value={player2} onClick={handleClick2}>{player2}</button>
+            </> : null}
             <p>Winner: {winner === "" ? "TBC" : winner}</p>
             {totalRounds === 1 ? <button onClick={handleChampion}>Crown the Champion</button> : 
-                confirmed ? null : <button onClick={handleConfirm}>Lock in Winner</button>}            
+                winner === "" ? null : 
+                    confirmed ? null : <button onClick={handleConfirm}>Lock in Winner</button>}           
         </div>
 
     );
