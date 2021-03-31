@@ -30,3 +30,10 @@ export const createNewRound = () => {
         type: "NEWROUND",
     }
 }
+
+export const setChampion = (winner) => {
+    return {
+        type: "SETCHAMPION",
+        winner: winner,
+    }
+}

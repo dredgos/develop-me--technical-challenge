@@ -3,15 +3,16 @@ import Button from "../button/Button"
 
 const AddPlayer = ({ addNewPlayer }) => {
 
-    const [playerName, setPlayerName] = useState("");
+    const [input, setInput] = useState("");
 
     const handlePlayerName = (e) => {
-        setPlayerName(e.currentTarget.value);
+        setInput(e.currentTarget.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addNewPlayer(playerName);        
+        addNewPlayer(input);
+        setInput("")        
     }
 
     return (
@@ -21,7 +22,7 @@ const AddPlayer = ({ addNewPlayer }) => {
                 type="text" 
                 id="newplayer"
                 onChange={handlePlayerName}
-                value={playerName}
+                value={input}
             />
             <Button buttonText="Sign them up" />
         </form>

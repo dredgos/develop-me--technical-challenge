@@ -5,6 +5,7 @@ const initial = {
     winners: [],
     round: 0,
     totalRounds: 0,
+    champion: "",
 }
 
 export default initial;
