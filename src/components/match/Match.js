@@ -43,7 +43,8 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion }) =>
             <p>Winner: {winner === "" ? "TBC" : winner}</p>
             {totalRounds === 1 ? <button onClick={handleChampion}>Crown the Champion</button> : 
                 winner === "" ? null : 
-                    confirmed ? null : <button onClick={handleConfirm}>Lock in Winner</button>}           
+                    confirmed ? null : 
+                        <button onClick={handleConfirm}>Lock in Winner</button>}           
         </div>
 
     );
