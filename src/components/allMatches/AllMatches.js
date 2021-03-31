@@ -1,9 +1,10 @@
 import Match from "../match/";
 
-const AllMatches = ({ matches, newRound }) => {
+const AllMatches = ({ matches, newRound, champion }) => {
 
     
     return (
+        champion === "" ? 
         <>
             <div>                
                 {matches.map((match) => (
@@ -18,8 +19,11 @@ const AllMatches = ({ matches, newRound }) => {
                     </>
                 ))}
             </div>
-            <button onClick={newRound}>New Round</button>
-        </>
+            <button onClick={newRound}>Next Round</button>
+        </> : 
+        <div>
+            <p>Tournament Champion is {champion}</p>
+        </div>
     );
 };
 

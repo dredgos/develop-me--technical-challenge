@@ -70,7 +70,12 @@ const makeNewRound = (state) => {
     }    
 }
 
-
+const crownChampion = (state, action) => {
+    return {
+        ...state,
+        champion: action.winner
+    }
+}
 
 
 
@@ -80,6 +85,7 @@ const reducer = (state, action) => {
         case "STARTTOURNAMENT": return createAllMatches(startTournament(state, action));
         case "ADDWINNER": return gameWinner(state, action);
         case "NEWROUND": return createAllMatches(makeNewRound(state, action));
+        case "SETCHAMPION": return crownChampion(state, action);
         case "RESET": return initial;
         default: return initial;
     }

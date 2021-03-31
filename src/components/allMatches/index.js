@@ -6,7 +6,8 @@ import { createNewRound } from '../../data/actions/State'
 
 const mapStateToProps = (state) => {
     return {
-       matches: state.matches        
+       matches: state.matches,
+       champion: state.champion,        
     }
 }
 
