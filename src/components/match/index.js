@@ -6,14 +6,15 @@ import { addWinner, setChampion } from '../../data/actions/State'
 
 const mapStateToProps = (state) => {
     return {
-       totalRounds: state.totalRounds       
+       totalRounds: state.totalRounds,
+            
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         sendWinner: (winner) => dispatch(addWinner(winner)),
-        handleChampion: () => dispatch(setChampion())
+        setNewChampion: (winner) => dispatch(setChampion(winner))
     }
 }
 
