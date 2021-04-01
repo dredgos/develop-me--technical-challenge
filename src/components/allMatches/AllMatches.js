@@ -12,7 +12,7 @@ const AllMatches = ({ matches, newRound, champion, players, winners }) => {
                     <>
                         <h2>Table {match.matchID + 1}</h2>
                         <Match 
-                            key={uuidv4()} 
+                            key={`${match.player1}V${match.player2}`} 
                             matchID={match.matchID} 
                             player1={match.player1} 
                             player2={match.player2}
