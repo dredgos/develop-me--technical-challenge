@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion }) => {
+const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion, matchID }) => {
 
    const [winner, setWinner] = useState("");
    const [confirmed, setConfirmed] = useState(false);
@@ -22,10 +22,15 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion }) =>
 
     const handleConfirm = () => {
         setConfirmed(true)
-        sendWinner(winner)
+        sendWinner(data)
     }
     const handleChampion = () => {
         setNewChampion(winner)
+    }
+
+    let data = {
+        winner: winner,
+        id: matchID + 1
     }
 
 

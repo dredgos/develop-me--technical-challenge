@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendWinner: (winner) => dispatch(addWinner(winner)),
+        sendWinner: (data) => dispatch(addWinner(data)),
         setNewChampion: (winner) => dispatch(setChampion(winner))
     }
 }
