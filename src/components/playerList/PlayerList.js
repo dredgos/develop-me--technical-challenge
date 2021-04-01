@@ -7,7 +7,6 @@ const PlayerList = ({ players, startTourney }) => {
                     <li key={index}>{player}</li>
                 ))}
             </ul>
-            <button onClick={startTourney}>Let the Games Begin!</button>
         </section>
     );
 };
