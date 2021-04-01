@@ -1,20 +1,16 @@
 import { connect } from 'react-redux';
 import PlayerList from './PlayerList'
-import { prepareTournament } from '../../data/actions/State'
+
 
 
 const mapStateToProps = (state) => {
     return {
-        players: state.players        
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        startTourney: (data) => dispatch(prepareTournament(data))
+        players: state.players,       
     }
 }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerList);
+
+
+export default connect(mapStateToProps)(PlayerList);

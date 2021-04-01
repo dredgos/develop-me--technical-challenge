@@ -55,6 +55,7 @@ const createAllMatches = (state) => {
 // Adding game winners to the array
 const gameWinner = (state, action) => {
 
+
     return {
         ...state,
         winners: [...state.winners, action.winner]
@@ -63,9 +64,12 @@ const gameWinner = (state, action) => {
 }
 
 const makeNewRound = (state) => {
+
+    let sortedArray = state.winners.sort((a, b) => a.id - b.id).map(winner => winner.winner)
+    
     return {
         ...state,
-        players: state.winners,
+        players: sortedArray,
         winners: [],
     }    
 }
