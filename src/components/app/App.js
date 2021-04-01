@@ -8,7 +8,7 @@ import TournamentView from '../tournamentView/';
 
 function App({ tournamentStarted }) {
   return (
-    <div>
+    <div className="container">
       <Header />
       {!tournamentStarted ? <GameSetup /> : <TournamentView />}
       

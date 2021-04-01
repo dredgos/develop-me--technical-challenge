@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "../button/Button"
 
 const AddPlayer = ({ addNewPlayer, players, startTourney }) => {
 
@@ -30,19 +29,25 @@ const AddPlayer = ({ addNewPlayer, players, startTourney }) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} >
-                <label htmlFor="newplayer">Add a Player</label>
+            <section>
+                <h2>Party Rules:</h2>
+                <p>Must have a minimum of four players</p>
+                <p>Number of players must be a power of two (4, 8, 16, 32 etc...)</p>
+            </section>
+            <form className="form-group" onSubmit={handleSubmit} >
+                <label className="form-label" htmlFor="newplayer">Add a Player</label>
                 <input
                     required 
                     type="text" 
                     id="newplayer"
                     onChange={handlePlayerName}
                     value={input}
+                    className="form-control"
                 />
-                <Button buttonText="Sign them up" />
+                <button className="btn ">Sign Them Up</button>
             </form>
-            {enoughPlayers ? <button onClick={startTourney}>Let the Games Begin!</button> : "Add More Players"}
-            {inputError ? <p>That player is already signed up</p> : null}
+            {enoughPlayers ? <button className="btn " onClick={startTourney}>Let the Games Begin!</button> : <p className="warning">Add More Players to Continue</p>}
+            {inputError ? <p className="warning">That player is already signed up</p> : null}
         </>
     );
 };

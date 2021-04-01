@@ -39,7 +39,7 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion, matc
     }
 
     return (
-        <div>
+        <div className="single_match">
             {!confirmed ? 
             <>
                 <button style={p1 ? buttonStyle : null} value={player1} onClick={handleClick1}>{player1}</button>
