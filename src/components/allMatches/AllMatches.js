@@ -6,7 +6,7 @@ const AllMatches = ({ matches, newRound, champion, players, winners }) => {
     return (
         champion === "" ? 
         <>
-            <div className="match_display">                
+            <div className={!matches.length === 1 ? "match_display" : "match_display_single"}>                
                 {matches.map((match) => (
                     <div className="single_match">
                         <h2>Table {match.matchID + 1}</h2>

@@ -5,12 +5,20 @@
     gap: 0.2rem;
 }
 
+.match_display_single {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .single_match {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid gray;
+    margin: 4rem;
+
 }
 
 .lockin {
