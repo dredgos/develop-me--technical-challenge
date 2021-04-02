@@ -1,8 +1,8 @@
 const Header = () => {
     return (
-        <h1>
-            Ping Pong Tournament
-        </h1>
+        <div class="wordart blues">
+            <h1 className="site_header text">Ping Pong Tournament</h1>
+        </div>
     );
 };
 
