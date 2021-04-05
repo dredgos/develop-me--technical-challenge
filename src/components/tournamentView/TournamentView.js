@@ -2,10 +2,12 @@ import AllMatches from "../allMatches/";
 
 const TournamentView = ({ resetTournament }) => {
     return (
-        <div>
+        <>
             <AllMatches />
-            <button onClick={resetTournament}>Start Again</button>
-        </div>
+            <div className="button-position">
+                <button className="btn btn-danger" onClick={resetTournament}>Start Again</button>
+            </div>
+        </>
     );
 };
 

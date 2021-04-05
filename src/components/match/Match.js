@@ -34,23 +34,26 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion, matc
     }
 
 
-    let buttonStyle = {
-        background: "green",
-    }
 
     return (
-        <div>
+        <section className="individual_matches">
+            <div className="table">
+                <div className="table__section table__section__a"></div>
+                <div className="table__section table__section__b"></div>
+                <div className="table__section table__section__a"></div>
+                <div className="table__section table__section__b"></div>
+            </div>
             {!confirmed ? 
-            <>
-                <button style={p1 ? buttonStyle : null} value={player1} onClick={handleClick1}>{player1}</button>
-                <button style={p2 ? buttonStyle : null} value={player2} onClick={handleClick2}>{player2}</button>
-            </> : null}
+            <div>
+                <button className={p1 ? "btn btn-success" : " btn btn-secondary"} value={player1} onClick={handleClick1}>{player1}</button>
+                <button className={p2 ? "btn btn-success" : " btn btn-secondary"} value={player2} onClick={handleClick2}>{player2}</button>
+            </div> : null}
             <p>Winner: {winner === "" ? "TBC" : winner}</p>
             {totalRounds === 1 ? <button onClick={handleChampion}>Crown the Champion</button> : 
                 winner === "" ? null : 
                     confirmed ? null : 
-                        <button onClick={handleConfirm}>Lock in Winner</button>}           
-        </div>
+                        <button className="btn btn-success"onClick={handleConfirm}>Lock in Winner</button>}           
+        </section>
 
     );
 };
