@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
        matches: state.matches,
        champion: state.champion,
        players: state.players,
-       winners: state.winners,        
+       winners: state.winners,
+       totalRounds: state.totalRounds,        
     }
 }
 

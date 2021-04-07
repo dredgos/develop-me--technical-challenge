@@ -1,12 +1,12 @@
 import Match from "../match/";
 
-const AllMatches = ({ matches, newRound, champion, players, winners }) => {
+const AllMatches = ({ matches, newRound, champion, players, winners, totalRounds }) => {
 
     
     return (
         champion === "" ? 
         <>
-            <div className={!matches.length === 1 ? "match_display" : "match_display_single"}>                
+            <div className={totalRounds === 1 ? "match_display_single" : "match_display"}>                
                 {matches.map((match) => (
                     <div className="single_match">
                         <h2>Table {match.matchID + 1}</h2>
