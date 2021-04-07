@@ -45,14 +45,18 @@ const Match = ({ player1, player2, sendWinner, totalRounds, setNewChampion, matc
             </div>
             {!confirmed ? 
             <div>
-                <button className={p1 ? "btn btn-success" : " btn btn-secondary"} value={player1} onClick={handleClick1}>{player1}</button>
-                <button className={p2 ? "btn btn-success" : " btn btn-secondary"} value={player2} onClick={handleClick2}>{player2}</button>
-            </div> : null}
-            <p>Winner: {winner === "" ? "TBC" : winner}</p>
-            {totalRounds === 1 ? <button onClick={handleChampion}>Crown the Champion</button> : 
-                winner === "" ? null : 
-                    confirmed ? null : 
-                        <button className="btn btn-success"onClick={handleConfirm}>Lock in Winner</button>}           
+                <button className={p1 ? "btn btn-success button" : " btn btn-secondary button"} value={player1} onClick={handleClick1}>{player1}</button>
+                <button className={p2 ? "btn btn-success button" : " btn btn-secondary button"} value={player2} onClick={handleClick2}>{player2}</button>
+            </div> : 
+            <div className="buttons">
+                <button className={p1 ? "btn btn-success button" : " btn btn-secondary button"} value={player1} disabled>{player1}</button>
+                <button className={p2 ? "btn btn-success button" : " btn btn-secondary button"} value={player2} disabled>{player2}</button>
+            </div>}
+            
+            {totalRounds === 1 ? <button className="btn" onClick={handleChampion}>Crown the Champion</button> : 
+                winner === "" ? <button className="btn" disabled>Pick a Winner</button> : 
+                    confirmed ? <button className="btn btn-success" disabled>{winner} wins!</button> : 
+                        <button className="btn btn-success" onClick={handleConfirm}>Lock in Winner</button>}           
         </section>
 
     );
