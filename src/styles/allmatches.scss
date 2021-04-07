@@ -41,6 +41,15 @@
     justify-content: center;
 }
 
+@media all and (max-width:480px) {
+  .match_display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 //text blink
 
 @keyframes blinkingText{
