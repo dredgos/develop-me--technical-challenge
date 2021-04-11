@@ -54,8 +54,7 @@ const createAllMatches = (state) => {
 
 // Adding game winners to the array
 const gameWinner = (state, action) => {
-
-
+    
     return {
         ...state,
         winners: [...state.winners, action.winner]
