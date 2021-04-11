@@ -1,10 +1,24 @@
+import GameSetup from '../gameSetup/GameSetup';
 import Header from '../header/Header';
+import HeaderStyle from '../headerStyle/HeaderStyle';
+import TournamentView from '../tournamentView/';
 
-function App() {
+
+
+
+
+function App({ tournamentStarted }) {
   return (
-    <div>
-      <Header />
-    </div>
+      <>
+      <HeaderStyle />
+      <div className="container">
+        <Header />
+        {!tournamentStarted ? <GameSetup /> : <TournamentView />}
+      
+
+ 
+      </div>
+      </>
   );
 }
 
